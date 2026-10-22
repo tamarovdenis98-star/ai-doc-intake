@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Счёт на оплату",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "number",
+    "date",
+    "supplier_name",
+    "supplier_inn",
+    "buyer_inn",
+    "total",
+    "lines",
+    "vat_rate",
+    "vat_amount"
+  ],
+  "properties": {
+    "number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "номер документа как напечатан"
+    },
+    "date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "дата в формате YYYY-MM-DD"
+    },
+    "supplier_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "supplier_inn": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^(\\d{10}|\\d{12})$",
+      "description": "ИНН: 10 цифр (юрлицо) или 12 (ИП)"
+    },
+    "supplier_kpp": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}[0-9A-Z]{2}\\d{3}$",
+      "description": "КПП, 9 знаков"
+    },
+    "buyer_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "buyer_inn": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^(\\d{10}|\\d{12})$",
+      "description": "ИНН: 10 цифр (юрлицо) или 12 (ИП)"
+    },
+    "buyer_kpp": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}[0-9A-Z]{2}\\d{3}$",
+      "description": "КПП, 9 знаков"
+    },
+    "lines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "qty",
+          "price",
+          "amount"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "qty": {
+            "type": "number"
+          },
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "price": {
+            "type": "number",
+            "description": "цена за единицу без НДС"
+          },
+          "amount": {
+            "type": "number",
+            "description": "сумма строки без НДС"
+          }
+        }
+      }
+    },
+    "total_without_vat": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "сумма в рублях, число с точкой, без пробелов"
+    },
+    "vat_rate": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "enum": [
+        22,
+        20,
+        10,
+        5,
+        7,
+        0,
+        null
+      ],
+      "description": "ставка НДС в процентах; null = без НДС"
+    },
+    "vat_amount": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "сумма в рублях, число с точкой, без пробелов"
+    },
+    "total": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "итого к оплате с НДС"
+    },
+    "supplier_account": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{20}$",
+      "description": "расчётный счёт, 20 цифр"
+    },
+    "supplier_bik": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{9}$"
+    }
+  }
+}

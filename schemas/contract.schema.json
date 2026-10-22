@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Договор",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "number",
+    "date",
+    "supplier_name",
+    "supplier_inn",
+    "buyer_inn"
+  ],
+  "properties": {
+    "number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "номер документа как напечатан"
+    },
+    "date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "дата в формате YYYY-MM-DD"
+    },
+    "supplier_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "supplier_inn": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^(\\d{10}|\\d{12})$",
+      "description": "ИНН: 10 цифр (юрлицо) или 12 (ИП)"
+    },
+    "supplier_kpp": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}[0-9A-Z]{2}\\d{3}$",
+      "description": "КПП, 9 знаков"
+    },
+    "buyer_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "buyer_inn": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^(\\d{10}|\\d{12})$",
+      "description": "ИНН: 10 цифр (юрлицо) или 12 (ИП)"
+    },
+    "buyer_kpp": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}[0-9A-Z]{2}\\d{3}$",
+      "description": "КПП, 9 знаков"
+    },
+    "subject": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "предмет договора, одной фразой"
+    },
+    "total": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "цена договора, если указана"
+    },
+    "valid_until": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "дата в формате YYYY-MM-DD"
+    }
+  }
+}
