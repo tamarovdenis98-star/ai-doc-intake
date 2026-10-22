@@ -1,0 +1,2119 @@
+{
+ "seed": 2026,
+ "today": "2026-10-22",
+ "documents": [
+  {
+   "id": 1,
+   "file": "files/001_invoice.pdf",
+   "mime": "application/pdf",
+   "doc_type": "invoice",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "УТ-862",
+    "date": "2026-06-19",
+    "supplier_name": "ИП Соколов Дмитрий Олегович",
+    "supplier_inn": "913998698701",
+    "supplier_kpp": null,
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Кабель UTP Cat6, 305 м",
+      "qty": 40,
+      "unit": "бухта",
+      "price": 24725.16,
+      "amount": 989006.4
+     },
+     {
+      "name": "Монитор 27\"",
+      "qty": 1,
+      "unit": "шт",
+      "price": 34750.91,
+      "amount": 34750.91
+     },
+     {
+      "name": "Стеллаж металлический",
+      "qty": 1,
+      "unit": "шт",
+      "price": 26824.01,
+      "amount": 26824.01
+     },
+     {
+      "name": "Кресло офисное",
+      "qty": 5,
+      "unit": "шт",
+      "price": 13911.75,
+      "amount": 69558.75
+     }
+    ],
+    "total_without_vat": 1120140.07,
+    "vat_rate": null,
+    "vat_amount": 0.0,
+    "total": 1120140.07,
+    "supplier_account": "40702810294055761698",
+    "supplier_bik": "044525225"
+   }
+  },
+  {
+   "id": 2,
+   "file": "files/002_invoice_scan.jpg",
+   "mime": "image/jpeg",
+   "doc_type": "invoice",
+   "scan": true,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "00584",
+    "date": "2025-12-29",
+    "supplier_name": "ООО «Медиа Плюс»",
+    "supplier_inn": "2689768469",
+    "supplier_kpp": "268901001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "lines": [
+     {
+      "name": "Кресло офисное",
+      "qty": 20,
+      "unit": "шт",
+      "price": 34339.94,
+      "amount": 686798.8
+     },
+     {
+      "name": "Стеллаж металлический",
+      "qty": 5,
+      "unit": "шт",
+      "price": 26936.24,
+      "amount": 134681.2
+     },
+     {
+      "name": "Бумага офисная А4",
+      "qty": 5,
+      "unit": "пач",
+      "price": 26378.91,
+      "amount": 131894.55
+     },
+     {
+      "name": "Ноутбук 15\"",
+      "qty": 20,
+      "unit": "шт",
+      "price": 38664.19,
+      "amount": 773283.8
+     }
+    ],
+    "total_without_vat": 1726658.35,
+    "vat_rate": 20,
+    "vat_amount": 345331.67,
+    "total": 2071990.02,
+    "supplier_account": "40702810663440029787",
+    "supplier_bik": "044525225"
+   }
+  },
+  {
+   "id": 3,
+   "file": "files/003_invoice_bad_total.pdf",
+   "mime": "application/pdf",
+   "doc_type": "invoice",
+   "scan": false,
+   "defect": "bad_total",
+   "expected_decision": "review",
+   "expected": {
+    "number": "798",
+    "date": "2026-03-02",
+    "supplier_name": "ООО «ИнтерКом»",
+    "supplier_inn": "8680457170",
+    "supplier_kpp": "868001001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Монитор 27\"",
+      "qty": 1,
+      "unit": "шт",
+      "price": 21741.37,
+      "amount": 21741.37
+     },
+     {
+      "name": "Кресло офисное",
+      "qty": 1,
+      "unit": "шт",
+      "price": 29344.9,
+      "amount": 29344.9
+     },
+     {
+      "name": "Бумага офисная А4",
+      "qty": 3,
+      "unit": "пач",
+      "price": 12009.03,
+      "amount": 36027.09
+     },
+     {
+      "name": "Тонер",
+      "qty": 1,
+      "unit": "шт",
+      "price": 36126.26,
+      "amount": 36126.26
+     }
+    ],
+    "total_without_vat": 123239.62,
+    "vat_rate": 22,
+    "vat_amount": 27112.72,
+    "total": 150352.84,
+    "supplier_account": "40702810452059972837",
+    "supplier_bik": "044525974"
+   }
+  },
+  {
+   "id": 4,
+   "file": "files/004_invoice.pdf",
+   "mime": "application/pdf",
+   "doc_type": "invoice",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "УТ-106",
+    "date": "2025-09-01",
+    "supplier_name": "ИП Соколов Дмитрий Олегович",
+    "supplier_inn": "941622948635",
+    "supplier_kpp": null,
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Ноутбук 15\"",
+      "qty": 10,
+      "unit": "шт",
+      "price": 32821.72,
+      "amount": 328217.2
+     }
+    ],
+    "total_without_vat": 328217.2,
+    "vat_rate": null,
+    "vat_amount": 0.0,
+    "total": 328217.2,
+    "supplier_account": "40702810751779922983",
+    "supplier_bik": "044525974"
+   }
+  },
+  {
+   "id": 5,
+   "file": "files/005_invoice_scan.jpg",
+   "mime": "image/jpeg",
+   "doc_type": "invoice",
+   "scan": true,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "А-2171",
+    "date": "2025-11-22",
+    "supplier_name": "АО «СеверСталь Сервис»",
+    "supplier_inn": "6793186030",
+    "supplier_kpp": "679301001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "lines": [
+     {
+      "name": "Монитор 27\"",
+      "qty": 2,
+      "unit": "шт",
+      "price": 18810.13,
+      "amount": 37620.26
+     },
+     {
+      "name": "Картридж лазерный",
+      "qty": 12,
+      "unit": "шт",
+      "price": 25654.57,
+      "amount": 307854.84
+     }
+    ],
+    "total_without_vat": 345475.1,
+    "vat_rate": 20,
+    "vat_amount": 69095.02,
+    "total": 414570.12,
+    "supplier_account": "40702810164252477647",
+    "supplier_bik": "044525225"
+   }
+  },
+  {
+   "id": 6,
+   "file": "files/006_invoice.pdf",
+   "mime": "application/pdf",
+   "doc_type": "invoice",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "1149",
+    "date": "2026-10-06",
+    "supplier_name": "АО «Энергосбыт Партнёр»",
+    "supplier_inn": "9413301750",
+    "supplier_kpp": "941301001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "lines": [
+     {
+      "name": "Кресло офисное",
+      "qty": 2,
+      "unit": "шт",
+      "price": 5004.66,
+      "amount": 10009.32
+     },
+     {
+      "name": "Кабель UTP Cat6, 305 м",
+      "qty": 2,
+      "unit": "бухта",
+      "price": 4764.21,
+      "amount": 9528.42
+     },
+     {
+      "name": "Монитор 27\"",
+      "qty": 12,
+      "unit": "шт",
+      "price": 8345.51,
+      "amount": 100146.12
+     },
+     {
+      "name": "Стеллаж металлический",
+      "qty": 1,
+      "unit": "шт",
+      "price": 36473.54,
+      "amount": 36473.54
+     },
+     {
+      "name": "Тонер",
+      "qty": 2,
+      "unit": "шт",
+      "price": 31058.44,
+      "amount": 62116.88
+     }
+    ],
+    "total_without_vat": 218274.28,
+    "vat_rate": 22,
+    "vat_amount": 48020.34,
+    "total": 266294.62,
+    "supplier_account": "40702810185491452441",
+    "supplier_bik": "044525225"
+   }
+  },
+  {
+   "id": 7,
+   "file": "files/007_invoice_bad_vat.pdf",
+   "mime": "application/pdf",
+   "doc_type": "invoice",
+   "scan": false,
+   "defect": "bad_vat",
+   "expected_decision": "review",
+   "expected": {
+    "number": "А-1896",
+    "date": "2026-05-11",
+    "supplier_name": "ИП Смирнов Алексей Петрович",
+    "supplier_inn": "700130411829",
+    "supplier_kpp": null,
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Картридж лазерный",
+      "qty": 5,
+      "unit": "шт",
+      "price": 18765.91,
+      "amount": 93829.55
+     },
+     {
+      "name": "Тонер",
+      "qty": 10,
+      "unit": "шт",
+      "price": 2907.63,
+      "amount": 29076.3
+     },
+     {
+      "name": "Монитор 27\"",
+      "qty": 12,
+      "unit": "шт",
+      "price": 42182.27,
+      "amount": 506187.24
+     },
+     {
+      "name": "Кабель UTP Cat6, 305 м",
+      "qty": 2,
+      "unit": "бухта",
+      "price": 33420.13,
+      "amount": 66840.26
+     }
+    ],
+    "total_without_vat": 695933.35,
+    "vat_rate": 22,
+    "vat_amount": 168415.87,
+    "total": 864349.22,
+    "supplier_account": "40702810414659085380",
+    "supplier_bik": "044525593"
+   }
+  },
+  {
+   "id": 8,
+   "file": "files/008_invoice.pdf",
+   "mime": "application/pdf",
+   "doc_type": "invoice",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "00900",
+    "date": "2026-10-05",
+    "supplier_name": "ООО «ОфисМаркет»",
+    "supplier_inn": "2291102858",
+    "supplier_kpp": "229101001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Монитор 27\"",
+      "qty": 1,
+      "unit": "шт",
+      "price": 31805.77,
+      "amount": 31805.77
+     },
+     {
+      "name": "Кабель UTP Cat6, 305 м",
+      "qty": 16,
+      "unit": "бухта",
+      "price": 32867.54,
+      "amount": 525880.64
+     }
+    ],
+    "total_without_vat": 557686.41,
+    "vat_rate": 22,
+    "vat_amount": 122691.01,
+    "total": 680377.42,
+    "supplier_account": "40702810642300487645",
+    "supplier_bik": "044525593"
+   }
+  },
+  {
+   "id": 9,
+   "file": "files/009_invoice_scan.jpg",
+   "mime": "image/jpeg",
+   "doc_type": "invoice",
+   "scan": true,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "УТ-953",
+    "date": "2025-12-02",
+    "supplier_name": "ИП Морозова Елена Викторовна",
+    "supplier_inn": "228084585035",
+    "supplier_kpp": null,
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "lines": [
+     {
+      "name": "Кабель UTP Cat6, 305 м",
+      "qty": 8,
+      "unit": "бухта",
+      "price": 30631.0,
+      "amount": 245048.0
+     },
+     {
+      "name": "Монитор 27\"",
+      "qty": 20,
+      "unit": "шт",
+      "price": 43072.52,
+      "amount": 861450.4
+     },
+     {
+      "name": "Картридж лазерный",
+      "qty": 5,
+      "unit": "шт",
+      "price": 9141.12,
+      "amount": 45705.6
+     },
+     {
+      "name": "Стеллаж металлический",
+      "qty": 12,
+      "unit": "шт",
+      "price": 7508.36,
+      "amount": 90100.32
+     },
+     {
+      "name": "Ноутбук 15\"",
+      "qty": 1,
+      "unit": "шт",
+      "price": 45628.67,
+      "amount": 45628.67
+     }
+    ],
+    "total_without_vat": 1287932.99,
+    "vat_rate": 20,
+    "vat_amount": 257586.6,
+    "total": 1545519.59,
+    "supplier_account": "40702810860214584210",
+    "supplier_bik": "044525225"
+   }
+  },
+  {
+   "id": 10,
+   "file": "files/010_invoice.pdf",
+   "mime": "application/pdf",
+   "doc_type": "invoice",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "УТ-1210",
+    "date": "2026-01-12",
+    "supplier_name": "ООО «Гранит»",
+    "supplier_inn": "7688281128",
+    "supplier_kpp": "768801001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Кабель UTP Cat6, 305 м",
+      "qty": 40,
+      "unit": "бухта",
+      "price": 30286.77,
+      "amount": 1211470.8
+     },
+     {
+      "name": "Монитор 27\"",
+      "qty": 20,
+      "unit": "шт",
+      "price": 45091.55,
+      "amount": 901831.0
+     },
+     {
+      "name": "Картридж лазерный",
+      "qty": 10,
+      "unit": "шт",
+      "price": 39010.34,
+      "amount": 390103.4
+     },
+     {
+      "name": "Кресло офисное",
+      "qty": 2,
+      "unit": "шт",
+      "price": 34696.75,
+      "amount": 69393.5
+     },
+     {
+      "name": "Тонер",
+      "qty": 1,
+      "unit": "шт",
+      "price": 8744.97,
+      "amount": 8744.97
+     }
+    ],
+    "total_without_vat": 2581543.67,
+    "vat_rate": 22,
+    "vat_amount": 567939.61,
+    "total": 3149483.28,
+    "supplier_account": "40702810822018051543",
+    "supplier_bik": "044525974"
+   }
+  },
+  {
+   "id": 11,
+   "file": "files/011_invoice_bad_inn.pdf",
+   "mime": "application/pdf",
+   "doc_type": "invoice",
+   "scan": false,
+   "defect": "bad_inn",
+   "expected_decision": "review",
+   "expected": {
+    "number": "УТ-339",
+    "date": "2026-04-24",
+    "supplier_name": "ООО «Альфа Консалт»",
+    "supplier_inn": "4215711646",
+    "supplier_kpp": "421501001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "lines": [
+     {
+      "name": "Картридж лазерный",
+      "qty": 20,
+      "unit": "шт",
+      "price": 37375.45,
+      "amount": 747509.0
+     }
+    ],
+    "total_without_vat": 747509.0,
+    "vat_rate": 22,
+    "vat_amount": 164451.98,
+    "total": 911960.98,
+    "supplier_account": "40702810432568855765",
+    "supplier_bik": "044525974"
+   }
+  },
+  {
+   "id": 12,
+   "file": "files/012_invoice.pdf",
+   "mime": "application/pdf",
+   "doc_type": "invoice",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "А-1359",
+    "date": "2026-03-13",
+    "supplier_name": "ИП Кузнецова Ольга Андреевна",
+    "supplier_inn": "455696327953",
+    "supplier_kpp": null,
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "lines": [
+     {
+      "name": "Картридж лазерный",
+      "qty": 5,
+      "unit": "шт",
+      "price": 27634.49,
+      "amount": 138172.45
+     },
+     {
+      "name": "Монитор 27\"",
+      "qty": 12,
+      "unit": "шт",
+      "price": 19263.7,
+      "amount": 231164.4
+     }
+    ],
+    "total_without_vat": 369336.85,
+    "vat_rate": null,
+    "vat_amount": 0.0,
+    "total": 369336.85,
+    "supplier_account": "40702810856517883655",
+    "supplier_bik": "044525974"
+   }
+  },
+  {
+   "id": 13,
+   "file": "files/013_invoice_scan.jpg",
+   "mime": "image/jpeg",
+   "doc_type": "invoice",
+   "scan": true,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "А-1873",
+    "date": "2026-02-14",
+    "supplier_name": "ИП Кузнецова Ольга Андреевна",
+    "supplier_inn": "304842599630",
+    "supplier_kpp": null,
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Кабель UTP Cat6, 305 м",
+      "qty": 16,
+      "unit": "бухта",
+      "price": 33282.96,
+      "amount": 532527.36
+     },
+     {
+      "name": "Ноутбук 15\"",
+      "qty": 1,
+      "unit": "шт",
+      "price": 47166.76,
+      "amount": 47166.76
+     },
+     {
+      "name": "Тонер",
+      "qty": 2,
+      "unit": "шт",
+      "price": 15939.71,
+      "amount": 31879.42
+     },
+     {
+      "name": "Монитор 27\"",
+      "qty": 3,
+      "unit": "шт",
+      "price": 45276.81,
+      "amount": 135830.43
+     },
+     {
+      "name": "Бумага офисная А4",
+      "qty": 3,
+      "unit": "пач",
+      "price": 29151.03,
+      "amount": 87453.09
+     }
+    ],
+    "total_without_vat": 834857.06,
+    "vat_rate": null,
+    "vat_amount": 0.0,
+    "total": 834857.06,
+    "supplier_account": "40702810241968982104",
+    "supplier_bik": "044525225"
+   }
+  },
+  {
+   "id": 14,
+   "file": "files/014_invoice.pdf",
+   "mime": "application/pdf",
+   "doc_type": "invoice",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "А-1506",
+    "date": "2026-10-01",
+    "supplier_name": "ООО «ДатаЦентр»",
+    "supplier_inn": "8555597477",
+    "supplier_kpp": "855501001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Стеллаж металлический",
+      "qty": 1,
+      "unit": "шт",
+      "price": 39144.86,
+      "amount": 39144.86
+     },
+     {
+      "name": "Монитор 27\"",
+      "qty": 1,
+      "unit": "шт",
+      "price": 34883.88,
+      "amount": 34883.88
+     },
+     {
+      "name": "Картридж лазерный",
+      "qty": 5,
+      "unit": "шт",
+      "price": 47092.4,
+      "amount": 235462.0
+     }
+    ],
+    "total_without_vat": 309490.74,
+    "vat_rate": 22,
+    "vat_amount": 68087.96,
+    "total": 377578.7,
+    "supplier_account": "40702810918895755521",
+    "supplier_bik": "044525974"
+   }
+  },
+  {
+   "id": 15,
+   "file": "files/015_invoice.pdf",
+   "mime": "application/pdf",
+   "doc_type": "invoice",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "А-2290",
+    "date": "2026-03-14",
+    "supplier_name": "ООО «Вектор-Логистик»",
+    "supplier_inn": "3488619300",
+    "supplier_kpp": "348801001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "lines": [
+     {
+      "name": "Тонер",
+      "qty": 3,
+      "unit": "шт",
+      "price": 7422.85,
+      "amount": 22268.55
+     },
+     {
+      "name": "Ноутбук 15\"",
+      "qty": 2,
+      "unit": "шт",
+      "price": 35020.31,
+      "amount": 70040.62
+     },
+     {
+      "name": "Кресло офисное",
+      "qty": 2,
+      "unit": "шт",
+      "price": 38301.54,
+      "amount": 76603.08
+     }
+    ],
+    "total_without_vat": 168912.25,
+    "vat_rate": 22,
+    "vat_amount": 37160.69,
+    "total": 206072.94,
+    "supplier_account": "40702810900442248527",
+    "supplier_bik": "044525593"
+   }
+  },
+  {
+   "id": 16,
+   "file": "files/016_invoice.pdf",
+   "mime": "application/pdf",
+   "doc_type": "invoice",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "0031",
+    "date": "2026-01-15",
+    "supplier_name": "ИП Морозова Елена Викторовна",
+    "supplier_inn": "122697804388",
+    "supplier_kpp": null,
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Картридж лазерный",
+      "qty": 10,
+      "unit": "шт",
+      "price": 28190.58,
+      "amount": 281905.8
+     }
+    ],
+    "total_without_vat": 281905.8,
+    "vat_rate": null,
+    "vat_amount": 0.0,
+    "total": 281905.8,
+    "supplier_account": "40702810450283166323",
+    "supplier_bik": "044525593"
+   }
+  },
+  {
+   "id": 17,
+   "file": "files/017_act_scan.jpg",
+   "mime": "image/jpeg",
+   "doc_type": "act",
+   "scan": true,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "323",
+    "date": "2025-12-01",
+    "supplier_name": "ООО «Вектор-Логистик»",
+    "supplier_inn": "8352866759",
+    "supplier_kpp": "835201001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Консультационные услуги",
+      "qty": 1,
+      "unit": "ч",
+      "price": 30826.89,
+      "amount": 30826.89
+     },
+     {
+      "name": "Техническое обслуживание серверов",
+      "qty": 1,
+      "unit": "мес",
+      "price": 43190.15,
+      "amount": 43190.15
+     },
+     {
+      "name": "Уборка офисных помещений",
+      "qty": 8,
+      "unit": "мес",
+      "price": 1609.51,
+      "amount": 12876.08
+     }
+    ],
+    "total_without_vat": 86893.12,
+    "vat_rate": 20,
+    "vat_amount": 17378.62,
+    "total": 104271.74
+   }
+  },
+  {
+   "id": 18,
+   "file": "files/018_act_stale_vat_rate.pdf",
+   "mime": "application/pdf",
+   "doc_type": "act",
+   "scan": false,
+   "defect": "stale_vat_rate",
+   "expected_decision": "review",
+   "expected": {
+    "number": "УТ-1044",
+    "date": "2026-03-12",
+    "supplier_name": "ООО «Стройресурс»",
+    "supplier_inn": "7078745724",
+    "supplier_kpp": "707801001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "lines": [
+     {
+      "name": "Юридическая консультация",
+      "qty": 8,
+      "unit": "ч",
+      "price": 16703.33,
+      "amount": 133626.64
+     }
+    ],
+    "total_without_vat": 133626.64,
+    "vat_rate": 20,
+    "vat_amount": 26725.33,
+    "total": 160351.97
+   }
+  },
+  {
+   "id": 19,
+   "file": "files/019_act.pdf",
+   "mime": "application/pdf",
+   "doc_type": "act",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "628",
+    "date": "2026-01-04",
+    "supplier_name": "АО «Энергосбыт Партнёр»",
+    "supplier_inn": "9814401907",
+    "supplier_kpp": "981401001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Консультационные услуги",
+      "qty": 8,
+      "unit": "ч",
+      "price": 4545.44,
+      "amount": 36363.52
+     },
+     {
+      "name": "Техническое обслуживание серверов",
+      "qty": 16,
+      "unit": "мес",
+      "price": 41323.82,
+      "amount": 661181.12
+     },
+     {
+      "name": "Сопровождение 1С",
+      "qty": 1,
+      "unit": "ч",
+      "price": 46653.9,
+      "amount": 46653.9
+     }
+    ],
+    "total_without_vat": 744198.54,
+    "vat_rate": 22,
+    "vat_amount": 163723.68,
+    "total": 907922.22
+   }
+  },
+  {
+   "id": 20,
+   "file": "files/020_act_scan.jpg",
+   "mime": "image/jpeg",
+   "doc_type": "act",
+   "scan": true,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "А-755",
+    "date": "2025-10-31",
+    "supplier_name": "ООО «ИнтерКом»",
+    "supplier_inn": "2981524736",
+    "supplier_kpp": "298101001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Доставка груза по Москве",
+      "qty": 8,
+      "unit": "рейс",
+      "price": 28407.91,
+      "amount": 227263.28
+     },
+     {
+      "name": "Сопровождение 1С",
+      "qty": 8,
+      "unit": "ч",
+      "price": 25506.39,
+      "amount": 204051.12
+     },
+     {
+      "name": "Техническое обслуживание серверов",
+      "qty": 8,
+      "unit": "мес",
+      "price": 45389.21,
+      "amount": 363113.68
+     },
+     {
+      "name": "Разработка интеграции с CRM",
+      "qty": 8,
+      "unit": "ч",
+      "price": 35091.93,
+      "amount": 280735.44
+     }
+    ],
+    "total_without_vat": 1075163.52,
+    "vat_rate": 20,
+    "vat_amount": 215032.7,
+    "total": 1290196.22
+   }
+  },
+  {
+   "id": 21,
+   "file": "files/021_act.pdf",
+   "mime": "application/pdf",
+   "doc_type": "act",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "1704",
+    "date": "2025-09-02",
+    "supplier_name": "ООО «ТехноСнаб»",
+    "supplier_inn": "6469059827",
+    "supplier_kpp": "646901001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Техническое обслуживание серверов",
+      "qty": 2,
+      "unit": "мес",
+      "price": 36121.84,
+      "amount": 72243.68
+     },
+     {
+      "name": "Уборка офисных помещений",
+      "qty": 1,
+      "unit": "мес",
+      "price": 25257.92,
+      "amount": 25257.92
+     },
+     {
+      "name": "Сопровождение 1С",
+      "qty": 2,
+      "unit": "ч",
+      "price": 4195.82,
+      "amount": 8391.64
+     },
+     {
+      "name": "Юридическая консультация",
+      "qty": 1,
+      "unit": "ч",
+      "price": 44972.61,
+      "amount": 44972.61
+     }
+    ],
+    "total_without_vat": 150865.85,
+    "vat_rate": 20,
+    "vat_amount": 30173.17,
+    "total": 181039.02
+   }
+  },
+  {
+   "id": 22,
+   "file": "files/022_act_future_date.pdf",
+   "mime": "application/pdf",
+   "doc_type": "act",
+   "scan": false,
+   "defect": "future_date",
+   "expected_decision": "review",
+   "expected": {
+    "number": "001063",
+    "date": "2026-12-01",
+    "supplier_name": "ИП Морозова Елена Викторовна",
+    "supplier_inn": "917805780396",
+    "supplier_kpp": null,
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Консультационные услуги",
+      "qty": 16,
+      "unit": "ч",
+      "price": 30567.82,
+      "amount": 489085.12
+     }
+    ],
+    "total_without_vat": 489085.12,
+    "vat_rate": null,
+    "vat_amount": 0.0,
+    "total": 489085.12
+   }
+  },
+  {
+   "id": 23,
+   "file": "files/023_act.pdf",
+   "mime": "application/pdf",
+   "doc_type": "act",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "А-971",
+    "date": "2026-10-12",
+    "supplier_name": "ООО «Вектор-Логистик»",
+    "supplier_inn": "4708538675",
+    "supplier_kpp": "470801001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "lines": [
+     {
+      "name": "Доставка груза по Москве",
+      "qty": 2,
+      "unit": "рейс",
+      "price": 19281.87,
+      "amount": 38563.74
+     },
+     {
+      "name": "Разработка интеграции с CRM",
+      "qty": 40,
+      "unit": "ч",
+      "price": 31519.42,
+      "amount": 1260776.8
+     }
+    ],
+    "total_without_vat": 1299340.54,
+    "vat_rate": 22,
+    "vat_amount": 285854.92,
+    "total": 1585195.46
+   }
+  },
+  {
+   "id": 24,
+   "file": "files/024_act_scan.jpg",
+   "mime": "image/jpeg",
+   "doc_type": "act",
+   "scan": true,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "002322",
+    "date": "2026-07-22",
+    "supplier_name": "ООО «Стройресурс»",
+    "supplier_inn": "1512983725",
+    "supplier_kpp": "151201001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Аренда офиса",
+      "qty": 40,
+      "unit": "мес",
+      "price": 28441.81,
+      "amount": 1137672.4
+     },
+     {
+      "name": "Техническое обслуживание серверов",
+      "qty": 40,
+      "unit": "мес",
+      "price": 12222.06,
+      "amount": 488882.4
+     },
+     {
+      "name": "Юридическая консультация",
+      "qty": 1,
+      "unit": "ч",
+      "price": 18200.95,
+      "amount": 18200.95
+     }
+    ],
+    "total_without_vat": 1644755.75,
+    "vat_rate": 22,
+    "vat_amount": 361846.27,
+    "total": 2006602.02
+   }
+  },
+  {
+   "id": 25,
+   "file": "files/025_act.pdf",
+   "mime": "application/pdf",
+   "doc_type": "act",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "2161",
+    "date": "2025-09-30",
+    "supplier_name": "ООО «Вектор-Логистик»",
+    "supplier_inn": "3480052795",
+    "supplier_kpp": "348001001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Консультационные услуги",
+      "qty": 1,
+      "unit": "ч",
+      "price": 21410.24,
+      "amount": 21410.24
+     },
+     {
+      "name": "Доставка груза по Москве",
+      "qty": 2,
+      "unit": "рейс",
+      "price": 45530.99,
+      "amount": 91061.98
+     },
+     {
+      "name": "Юридическая консультация",
+      "qty": 8,
+      "unit": "ч",
+      "price": 30464.11,
+      "amount": 243712.88
+     }
+    ],
+    "total_without_vat": 356185.1,
+    "vat_rate": 20,
+    "vat_amount": 71237.02,
+    "total": 427422.12
+   }
+  },
+  {
+   "id": 26,
+   "file": "files/026_act.pdf",
+   "mime": "application/pdf",
+   "doc_type": "act",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "А-874",
+    "date": "2026-06-13",
+    "supplier_name": "ИП Соколов Дмитрий Олегович",
+    "supplier_inn": "213571647784",
+    "supplier_kpp": null,
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Сопровождение 1С",
+      "qty": 40,
+      "unit": "ч",
+      "price": 15721.88,
+      "amount": 628875.2
+     },
+     {
+      "name": "Уборка офисных помещений",
+      "qty": 1,
+      "unit": "мес",
+      "price": 11148.19,
+      "amount": 11148.19
+     },
+     {
+      "name": "Аренда офиса",
+      "qty": 1,
+      "unit": "мес",
+      "price": 28934.27,
+      "amount": 28934.27
+     }
+    ],
+    "total_without_vat": 668957.66,
+    "vat_rate": null,
+    "vat_amount": 0.0,
+    "total": 668957.66
+   }
+  },
+  {
+   "id": 27,
+   "file": "files/027_act_scan.jpg",
+   "mime": "image/jpeg",
+   "doc_type": "act",
+   "scan": true,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "002378",
+    "date": "2026-06-17",
+    "supplier_name": "ООО «ДатаЦентр»",
+    "supplier_inn": "7398488642",
+    "supplier_kpp": "739801001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Юридическая консультация",
+      "qty": 40,
+      "unit": "ч",
+      "price": 23926.47,
+      "amount": 957058.8
+     },
+     {
+      "name": "Доставка груза по Москве",
+      "qty": 1,
+      "unit": "рейс",
+      "price": 29426.34,
+      "amount": 29426.34
+     }
+    ],
+    "total_without_vat": 986485.14,
+    "vat_rate": 22,
+    "vat_amount": 217026.73,
+    "total": 1203511.87
+   }
+  },
+  {
+   "id": 28,
+   "file": "files/028_act.pdf",
+   "mime": "application/pdf",
+   "doc_type": "act",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "УТ-120",
+    "date": "2026-10-13",
+    "supplier_name": "АО «Энергосбыт Партнёр»",
+    "supplier_inn": "7388498553",
+    "supplier_kpp": "738801001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "lines": [
+     {
+      "name": "Доставка груза по Москве",
+      "qty": 1,
+      "unit": "рейс",
+      "price": 8515.19,
+      "amount": 8515.19
+     }
+    ],
+    "total_without_vat": 8515.19,
+    "vat_rate": 22,
+    "vat_amount": 1873.34,
+    "total": 10388.53
+   }
+  },
+  {
+   "id": 29,
+   "file": "files/029_upd_bad_line_math.pdf",
+   "mime": "application/pdf",
+   "doc_type": "upd",
+   "scan": false,
+   "defect": "bad_line_math",
+   "expected_decision": "review",
+   "expected": {
+    "number": "00963",
+    "date": "2026-06-30",
+    "supplier_name": "ООО «ТехноСнаб»",
+    "supplier_inn": "7726835080",
+    "supplier_kpp": "772601001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "lines": [
+     {
+      "name": "Кабель UTP Cat6, 305 м",
+      "qty": 1,
+      "unit": "бухта",
+      "price": 36600.35,
+      "amount": 36610.35
+     },
+     {
+      "name": "Бумага офисная А4",
+      "qty": 2,
+      "unit": "пач",
+      "price": 22205.45,
+      "amount": 44410.9
+     },
+     {
+      "name": "Стеллаж металлический",
+      "qty": 12,
+      "unit": "шт",
+      "price": 4913.18,
+      "amount": 58958.16
+     }
+    ],
+    "total_without_vat": 139979.41,
+    "vat_rate": 22,
+    "vat_amount": 30795.47,
+    "total": 170774.88,
+    "upd_status": 1
+   }
+  },
+  {
+   "id": 30,
+   "file": "files/030_upd.pdf",
+   "mime": "application/pdf",
+   "doc_type": "upd",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "001733",
+    "date": "2026-03-06",
+    "supplier_name": "ООО «Вектор-Логистик»",
+    "supplier_inn": "2387592113",
+    "supplier_kpp": "238701001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "lines": [
+     {
+      "name": "Ноутбук 15\"",
+      "qty": 20,
+      "unit": "шт",
+      "price": 3085.21,
+      "amount": 61704.2
+     }
+    ],
+    "total_without_vat": 61704.2,
+    "vat_rate": 22,
+    "vat_amount": 13574.92,
+    "total": 75279.12,
+    "upd_status": 1
+   }
+  },
+  {
+   "id": 31,
+   "file": "files/031_upd_scan.jpg",
+   "mime": "image/jpeg",
+   "doc_type": "upd",
+   "scan": true,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "УТ-1781",
+    "date": "2026-03-16",
+    "supplier_name": "АО «Энергосбыт Партнёр»",
+    "supplier_inn": "8510626142",
+    "supplier_kpp": "851001001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "lines": [
+     {
+      "name": "Кресло офисное",
+      "qty": 10,
+      "unit": "шт",
+      "price": 44778.77,
+      "amount": 447787.7
+     }
+    ],
+    "total_without_vat": 447787.7,
+    "vat_rate": 22,
+    "vat_amount": 98513.29,
+    "total": 546300.99,
+    "upd_status": 1
+   }
+  },
+  {
+   "id": 32,
+   "file": "files/032_upd.pdf",
+   "mime": "application/pdf",
+   "doc_type": "upd",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "УТ-852",
+    "date": "2026-06-12",
+    "supplier_name": "АО «Энергосбыт Партнёр»",
+    "supplier_inn": "5569943989",
+    "supplier_kpp": "556901001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Ноутбук 15\"",
+      "qty": 5,
+      "unit": "шт",
+      "price": 15045.32,
+      "amount": 75226.6
+     },
+     {
+      "name": "Картридж лазерный",
+      "qty": 3,
+      "unit": "шт",
+      "price": 242.63,
+      "amount": 727.89
+     },
+     {
+      "name": "Монитор 27\"",
+      "qty": 3,
+      "unit": "шт",
+      "price": 28901.62,
+      "amount": 86704.86
+     },
+     {
+      "name": "Кабель UTP Cat6, 305 м",
+      "qty": 2,
+      "unit": "бухта",
+      "price": 33509.75,
+      "amount": 67019.5
+     },
+     {
+      "name": "Тонер",
+      "qty": 1,
+      "unit": "шт",
+      "price": 31779.22,
+      "amount": 31779.22
+     }
+    ],
+    "total_without_vat": 261458.07,
+    "vat_rate": 22,
+    "vat_amount": 57520.78,
+    "total": 318978.85,
+    "upd_status": 1
+   }
+  },
+  {
+   "id": 33,
+   "file": "files/033_invoice_scan_duplicate_of_1.jpg",
+   "mime": "image/jpeg",
+   "doc_type": "invoice",
+   "scan": true,
+   "defect": "duplicate_of_1",
+   "expected_decision": "review",
+   "expected": {
+    "number": "УТ-862",
+    "date": "2026-06-19",
+    "supplier_name": "ИП Соколов Дмитрий Олегович",
+    "supplier_inn": "913998698701",
+    "supplier_kpp": null,
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Кабель UTP Cat6, 305 м",
+      "qty": 40,
+      "unit": "бухта",
+      "price": 24725.16,
+      "amount": 989006.4
+     },
+     {
+      "name": "Монитор 27\"",
+      "qty": 1,
+      "unit": "шт",
+      "price": 34750.91,
+      "amount": 34750.91
+     },
+     {
+      "name": "Стеллаж металлический",
+      "qty": 1,
+      "unit": "шт",
+      "price": 26824.01,
+      "amount": 26824.01
+     },
+     {
+      "name": "Кресло офисное",
+      "qty": 5,
+      "unit": "шт",
+      "price": 13911.75,
+      "amount": 69558.75
+     }
+    ],
+    "total_without_vat": 1120140.07,
+    "vat_rate": null,
+    "vat_amount": 0.0,
+    "total": 1120140.07,
+    "supplier_account": "40702810294055761698",
+    "supplier_bik": "044525225"
+   }
+  },
+  {
+   "id": 34,
+   "file": "files/034_upd.pdf",
+   "mime": "application/pdf",
+   "doc_type": "upd",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "2198",
+    "date": "2026-09-20",
+    "supplier_name": "ООО «Вектор-Логистик»",
+    "supplier_inn": "9015646442",
+    "supplier_kpp": "901501001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "lines": [
+     {
+      "name": "Бумага офисная А4",
+      "qty": 3,
+      "unit": "пач",
+      "price": 5726.78,
+      "amount": 17180.34
+     },
+     {
+      "name": "Монитор 27\"",
+      "qty": 1,
+      "unit": "шт",
+      "price": 43589.8,
+      "amount": 43589.8
+     },
+     {
+      "name": "Картридж лазерный",
+      "qty": 1,
+      "unit": "шт",
+      "price": 47945.72,
+      "amount": 47945.72
+     },
+     {
+      "name": "Ноутбук 15\"",
+      "qty": 12,
+      "unit": "шт",
+      "price": 1910.58,
+      "amount": 22926.96
+     },
+     {
+      "name": "Кресло офисное",
+      "qty": 20,
+      "unit": "шт",
+      "price": 46572.66,
+      "amount": 931453.2
+     }
+    ],
+    "total_without_vat": 1063096.02,
+    "vat_rate": 22,
+    "vat_amount": 233881.12,
+    "total": 1296977.14,
+    "upd_status": 1
+   }
+  },
+  {
+   "id": 35,
+   "file": "files/035_upd_scan.jpg",
+   "mime": "image/jpeg",
+   "doc_type": "upd",
+   "scan": true,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "001958",
+    "date": "2026-06-05",
+    "supplier_name": "ООО «Альфа Консалт»",
+    "supplier_inn": "9046587300",
+    "supplier_kpp": "904601001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "lines": [
+     {
+      "name": "Монитор 27\"",
+      "qty": 1,
+      "unit": "шт",
+      "price": 38250.97,
+      "amount": 38250.97
+     },
+     {
+      "name": "Стеллаж металлический",
+      "qty": 12,
+      "unit": "шт",
+      "price": 9322.52,
+      "amount": 111870.24
+     },
+     {
+      "name": "Бумага офисная А4",
+      "qty": 20,
+      "unit": "пач",
+      "price": 25216.87,
+      "amount": 504337.4
+     },
+     {
+      "name": "Ноутбук 15\"",
+      "qty": 2,
+      "unit": "шт",
+      "price": 9985.88,
+      "amount": 19971.76
+     }
+    ],
+    "total_without_vat": 674430.37,
+    "vat_rate": 22,
+    "vat_amount": 148374.68,
+    "total": 822805.05,
+    "upd_status": 1
+   }
+  },
+  {
+   "id": 36,
+   "file": "files/036_upd.pdf",
+   "mime": "application/pdf",
+   "doc_type": "upd",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "923",
+    "date": "2026-05-31",
+    "supplier_name": "ООО «КлинингПро»",
+    "supplier_inn": "2376156108",
+    "supplier_kpp": "237601001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "lines": [
+     {
+      "name": "Тонер",
+      "qty": 2,
+      "unit": "шт",
+      "price": 9441.73,
+      "amount": 18883.46
+     },
+     {
+      "name": "Стеллаж металлический",
+      "qty": 5,
+      "unit": "шт",
+      "price": 32837.44,
+      "amount": 164187.2
+     },
+     {
+      "name": "Картридж лазерный",
+      "qty": 12,
+      "unit": "шт",
+      "price": 12178.45,
+      "amount": 146141.4
+     },
+     {
+      "name": "Ноутбук 15\"",
+      "qty": 20,
+      "unit": "шт",
+      "price": 17526.68,
+      "amount": 350533.6
+     }
+    ],
+    "total_without_vat": 679745.66,
+    "vat_rate": 22,
+    "vat_amount": 149544.05,
+    "total": 829289.71,
+    "upd_status": 1
+   }
+  },
+  {
+   "id": 37,
+   "file": "files/037_upd.pdf",
+   "mime": "application/pdf",
+   "doc_type": "upd",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "001609",
+    "date": "2026-06-26",
+    "supplier_name": "ООО «Ромашка»",
+    "supplier_inn": "4257192943",
+    "supplier_kpp": "425701001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Кресло офисное",
+      "qty": 5,
+      "unit": "шт",
+      "price": 6061.68,
+      "amount": 30308.4
+     }
+    ],
+    "total_without_vat": 30308.4,
+    "vat_rate": 22,
+    "vat_amount": 6667.85,
+    "total": 36976.25,
+    "upd_status": 1
+   }
+  },
+  {
+   "id": 38,
+   "file": "files/038_upd_scan.jpg",
+   "mime": "image/jpeg",
+   "doc_type": "upd",
+   "scan": true,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "1305",
+    "date": "2026-09-03",
+    "supplier_name": "ООО «Стройресурс»",
+    "supplier_inn": "7175442010",
+    "supplier_kpp": "717501001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Кабель UTP Cat6, 305 м",
+      "qty": 8,
+      "unit": "бухта",
+      "price": 46980.66,
+      "amount": 375845.28
+     }
+    ],
+    "total_without_vat": 375845.28,
+    "vat_rate": 22,
+    "vat_amount": 82685.96,
+    "total": 458531.24,
+    "upd_status": 1
+   }
+  },
+  {
+   "id": 39,
+   "file": "files/039_upd.pdf",
+   "mime": "application/pdf",
+   "doc_type": "upd",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "1776",
+    "date": "2026-01-08",
+    "supplier_name": "ООО «Вектор-Логистик»",
+    "supplier_inn": "4059776055",
+    "supplier_kpp": "405901001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "lines": [
+     {
+      "name": "Бумага офисная А4",
+      "qty": 20,
+      "unit": "пач",
+      "price": 7122.26,
+      "amount": 142445.2
+     },
+     {
+      "name": "Тонер",
+      "qty": 20,
+      "unit": "шт",
+      "price": 19454.48,
+      "amount": 389089.6
+     },
+     {
+      "name": "Кабель UTP Cat6, 305 м",
+      "qty": 40,
+      "unit": "бухта",
+      "price": 43951.12,
+      "amount": 1758044.8
+     },
+     {
+      "name": "Ноутбук 15\"",
+      "qty": 10,
+      "unit": "шт",
+      "price": 45963.55,
+      "amount": 459635.5
+     }
+    ],
+    "total_without_vat": 2749215.1,
+    "vat_rate": 22,
+    "vat_amount": 604827.32,
+    "total": 3354042.42,
+    "upd_status": 1
+   }
+  },
+  {
+   "id": 40,
+   "file": "files/040_upd_bad_total.pdf",
+   "mime": "application/pdf",
+   "doc_type": "upd",
+   "scan": false,
+   "defect": "bad_total",
+   "expected_decision": "review",
+   "expected": {
+    "number": "А-1236",
+    "date": "2026-09-30",
+    "supplier_name": "ООО «Ромашка»",
+    "supplier_inn": "5136334377",
+    "supplier_kpp": "513601001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "lines": [
+     {
+      "name": "Кабель UTP Cat6, 305 м",
+      "qty": 8,
+      "unit": "бухта",
+      "price": 13842.23,
+      "amount": 110737.84
+     },
+     {
+      "name": "Стеллаж металлический",
+      "qty": 12,
+      "unit": "шт",
+      "price": 26764.11,
+      "amount": 321169.32
+     }
+    ],
+    "total_without_vat": 431907.16,
+    "vat_rate": 22,
+    "vat_amount": 95019.58,
+    "total": 527026.74,
+    "upd_status": 1
+   }
+  },
+  {
+   "id": 41,
+   "file": "files/041_contract.pdf",
+   "mime": "application/pdf",
+   "doc_type": "contract",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "УТ-765",
+    "date": "2025-09-19",
+    "supplier_name": "ООО «Медиа Плюс»",
+    "supplier_inn": "2665398995",
+    "supplier_kpp": "266501001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "subject": "уборка офисных помещений",
+    "total": 440982.02,
+    "valid_until": "2026-09-19"
+   }
+  },
+  {
+   "id": 42,
+   "file": "files/042_contract_scan.jpg",
+   "mime": "image/jpeg",
+   "doc_type": "contract",
+   "scan": true,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "002152",
+    "date": "2025-10-29",
+    "supplier_name": "ООО «ДатаЦентр»",
+    "supplier_inn": "4349677049",
+    "supplier_kpp": "434901001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "subject": "сопровождение 1с",
+    "total": 683029.81,
+    "valid_until": "2026-10-29"
+   }
+  },
+  {
+   "id": 43,
+   "file": "files/043_contract.pdf",
+   "mime": "application/pdf",
+   "doc_type": "contract",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "2251",
+    "date": "2026-10-13",
+    "supplier_name": "ООО «КлинингПро»",
+    "supplier_inn": "2082359539",
+    "supplier_kpp": "208201001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "subject": "консультационные услуги",
+    "total": 276008.81,
+    "valid_until": "2027-10-13"
+   }
+  },
+  {
+   "id": 44,
+   "file": "files/044_contract.pdf",
+   "mime": "application/pdf",
+   "doc_type": "contract",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "А-77",
+    "date": "2025-10-06",
+    "supplier_name": "ООО «ИнтерКом»",
+    "supplier_inn": "5602619566",
+    "supplier_kpp": "560201001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "subject": "техническое обслуживание серверов",
+    "total": 466111.3,
+    "valid_until": "2026-10-06"
+   }
+  },
+  {
+   "id": 45,
+   "file": "files/045_contract_scan.jpg",
+   "mime": "image/jpeg",
+   "doc_type": "contract",
+   "scan": true,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "002168",
+    "date": "2026-04-11",
+    "supplier_name": "ООО «Вектор-Логистик»",
+    "supplier_inn": "1917039272",
+    "supplier_kpp": "191701001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "subject": "уборка офисных помещений",
+    "total": 811943.76,
+    "valid_until": "2027-04-11"
+   }
+  },
+  {
+   "id": 46,
+   "file": "files/046_contract.pdf",
+   "mime": "application/pdf",
+   "doc_type": "contract",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "00807",
+    "date": "2026-09-24",
+    "supplier_name": "ООО «Вектор-Логистик»",
+    "supplier_inn": "7351102036",
+    "supplier_kpp": "735101001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "subject": "юридическая консультация",
+    "total": 869494.87,
+    "valid_until": "2027-09-24"
+   }
+  },
+  {
+   "id": 47,
+   "file": "files/047_contract.pdf",
+   "mime": "application/pdf",
+   "doc_type": "contract",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "1390",
+    "date": "2026-03-08",
+    "supplier_name": "АО «СеверСталь Сервис»",
+    "supplier_inn": "7715529300",
+    "supplier_kpp": "771501001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "6205542037",
+    "buyer_kpp": "620501001",
+    "subject": "юридическая консультация",
+    "total": 563018.59,
+    "valid_until": "2027-03-08"
+   }
+  },
+  {
+   "id": 48,
+   "file": "files/048_contract.pdf",
+   "mime": "application/pdf",
+   "doc_type": "contract",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "auto",
+   "expected": {
+    "number": "А-2392",
+    "date": "2026-08-15",
+    "supplier_name": "ООО «Медиа Плюс»",
+    "supplier_inn": "3992398130",
+    "supplier_kpp": "399201001",
+    "buyer_name": "ООО «КлинингПро»",
+    "buyer_inn": "2710562625",
+    "buyer_kpp": "271001001",
+    "subject": "уборка офисных помещений",
+    "total": 827746.26,
+    "valid_until": "2027-08-15"
+   }
+  },
+  {
+   "id": 49,
+   "file": "files/049_other.pdf",
+   "mime": "application/pdf",
+   "doc_type": "other",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "review",
+   "expected": {}
+  },
+  {
+   "id": 50,
+   "file": "files/050_other_scan.jpg",
+   "mime": "image/jpeg",
+   "doc_type": "other",
+   "scan": true,
+   "defect": null,
+   "expected_decision": "review",
+   "expected": {}
+  },
+  {
+   "id": 51,
+   "file": "files/051_other.pdf",
+   "mime": "application/pdf",
+   "doc_type": "other",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "review",
+   "expected": {}
+  },
+  {
+   "id": 52,
+   "file": "files/052_other.pdf",
+   "mime": "application/pdf",
+   "doc_type": "other",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "review",
+   "expected": {}
+  },
+  {
+   "id": 53,
+   "file": "files/053_other_scan.jpg",
+   "mime": "image/jpeg",
+   "doc_type": "other",
+   "scan": true,
+   "defect": null,
+   "expected_decision": "review",
+   "expected": {}
+  },
+  {
+   "id": 54,
+   "file": "files/054_other.pdf",
+   "mime": "application/pdf",
+   "doc_type": "other",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "review",
+   "expected": {}
+  },
+  {
+   "id": 55,
+   "file": "files/055_other.pdf",
+   "mime": "application/pdf",
+   "doc_type": "other",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "review",
+   "expected": {}
+  },
+  {
+   "id": 56,
+   "file": "files/056_other.pdf",
+   "mime": "application/pdf",
+   "doc_type": "other",
+   "scan": false,
+   "defect": null,
+   "expected_decision": "review",
+   "expected": {}
+  }
+ ]
+}
