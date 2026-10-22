@@ -1,0 +1,196 @@
+{
+  "active": true,
+  "connections": {
+    "Claim": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Claimed any?",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Claimed any?": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Process document",
+            "type": "main"
+          }
+        ],
+        []
+      ]
+    },
+    "Every 20 s": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Claim",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Process document": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Done",
+            "type": "main"
+          }
+        ],
+        [
+          {
+            "index": 0,
+            "node": "Mark failed",
+            "type": "main"
+          }
+        ]
+      ]
+    }
+  },
+  "name": "[DOCAI] 02 process",
+  "nodes": [
+    {
+      "credentials": {
+        "postgres": {
+          "name": "DOCAI Postgres"
+        }
+      },
+      "id": "77c929f6-8f5c-508e-a629-b19692eaa3f1",
+      "name": "Claim",
+      "parameters": {
+        "operation": "executeQuery",
+        "options": {},
+        "query": "WITH cfg AS (\n  SELECT coalesce((SELECT value::int FROM settings WHERE key = 'process_batch_size'), 3)   AS batch,\n         coalesce((SELECT value::int FROM settings WHERE key = 'process_max_attempts'), 4) AS max_att,\n         -- bounded concurrency: OCR and LLM calls of at most process_max_in_flight documents at once\n         greatest(0, coalesce((SELECT value::int FROM settings WHERE key = 'process_max_in_flight'), 3)\n                     - (SELECT count(*) FROM documents WHERE status = 'processing' AND locked_at > now() - interval '15 minutes')) AS room\n), picked AS (\n  SELECT d.id FROM documents d, cfg\n   WHERE ((d.status IN ('new', 'failed') AND d.next_attempt_at <= now())\n          OR (d.status = 'processing' AND d.locked_at < now() - interval '15 minutes'))\n     AND d.attempt_count < cfg.max_att\n   ORDER BY d.next_attempt_at, d.id\n   LIMIT (SELECT least(batch, room) FROM cfg)\n   FOR UPDATE OF d SKIP LOCKED\n)\nUPDATE documents d SET status = 'processing', locked_at = now(), attempt_count = d.attempt_count + 1, updated_at = now()\n  FROM picked WHERE d.id = picked.id\nRETURNING d.id AS doc_id, d.attempt_count"
+      },
+      "position": [
+        220,
+        300
+      ],
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6
+    },
+    {
+      "id": "754f3efc-294e-57b8-9307-377b8758b079",
+      "name": "Claimed any?",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "8cc37c30-45cb-5ff8-8a39-fb70dd3eb06b",
+              "leftValue": "={{ $json.doc_id !== undefined }}",
+              "operator": {
+                "operation": "true",
+                "singleValue": true,
+                "type": "boolean"
+              },
+              "rightValue": ""
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        440,
+        300
+      ],
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2
+    },
+    {
+      "id": "515cceed-3438-54d4-a04e-57490cc27b4e",
+      "name": "Done",
+      "parameters": {},
+      "position": [
+        880,
+        200
+      ],
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1
+    },
+    {
+      "id": "93936da3-6d01-5d47-8f0a-e3ade49ceb9a",
+      "name": "Every 20 s",
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "seconds",
+              "secondsInterval": 20
+            }
+          ]
+        }
+      },
+      "position": [
+        0,
+        300
+      ],
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2
+    },
+    {
+      "credentials": {
+        "postgres": {
+          "name": "DOCAI Postgres"
+        }
+      },
+      "id": "438f4479-2fc9-552f-80e8-40309f3b72b9",
+      "name": "Mark failed",
+      "parameters": {
+        "operation": "executeQuery",
+        "options": {
+          "queryReplacement": "={{ [$('Claim').item.json.doc_id, String($json.error?.message ?? $json.error ?? 'unknown error')] }}"
+        },
+        "query": "WITH cfg AS (SELECT coalesce((SELECT value::int FROM settings WHERE key = 'process_max_attempts'), 4) AS max_att),\nu AS (\n  UPDATE documents SET status = 'failed', last_error = left($2, 2000), locked_at = NULL, updated_at = now(),\n         next_attempt_at = now() + make_interval(mins => power(2, attempt_count - 1)::int)\n   WHERE id = $1 RETURNING id, attempt_count\n)\nINSERT INTO audit_log (doc_id, actor, action, detail)\nSELECT id, 'system', CASE WHEN attempt_count >= (SELECT max_att FROM cfg) THEN 'failed_final' ELSE 'failed_retry' END,\n       jsonb_build_object('attempt', attempt_count, 'error', left($2, 500)) FROM u\nRETURNING doc_id"
+      },
+      "position": [
+        880,
+        420
+      ],
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6
+    },
+    {
+      "id": "e7229162-d5b2-5262-87fd-384f49a4b7a1",
+      "name": "Process document",
+      "onError": "continueErrorOutput",
+      "parameters": {
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        },
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "@name:[DOCAI] 02a process document"
+        }
+      },
+      "position": [
+        660,
+        300
+      ],
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1
+    }
+  ],
+  "settings": {
+    "errorWorkflow": "@name:[DOCAI] 99 error handler",
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "none"
+  }
+}

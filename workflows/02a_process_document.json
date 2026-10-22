@@ -1,0 +1,572 @@
+{
+  "active": true,
+  "connections": {
+    "Classify": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Judge classify",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Classify ok?": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Extract",
+            "type": "main"
+          }
+        ],
+        [
+          {
+            "index": 0,
+            "node": "Needs review",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Extract": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Judge extract",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Extract ok?": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Validate",
+            "type": "main"
+          }
+        ],
+        [
+          {
+            "index": 0,
+            "node": "Needs review",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Judge classify": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Classify ok?",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Judge extract": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Extract ok?",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Judge text": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Text ok?",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Judge validate": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Validate ok?",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Start": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Text",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Text": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Judge text",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Text ok?": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Classify",
+            "type": "main"
+          }
+        ],
+        [
+          {
+            "index": 0,
+            "node": "Needs review",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Validate": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Judge validate",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Validate ok?": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Finish",
+            "type": "main"
+          }
+        ],
+        [
+          {
+            "index": 0,
+            "node": "Needs review",
+            "type": "main"
+          }
+        ]
+      ]
+    }
+  },
+  "name": "[DOCAI] 02a process document",
+  "nodes": [
+    {
+      "credentials": {
+        "httpHeaderAuth": {
+          "name": "DOCAI Extractor"
+        }
+      },
+      "id": "6816cd32-0395-54af-be60-4959e08ca602",
+      "maxTries": 2,
+      "name": "Classify",
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "jsonBody": "={{ JSON.stringify({}) }}",
+        "method": "POST",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          },
+          "timeout": 120000
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "url": "={{ 'http://docai-extractor:8080/documents/' + $('Start').first().json.doc_id + '/classify' }}"
+      },
+      "position": [
+        840,
+        300
+      ],
+      "retryOnFail": true,
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "waitBetweenTries": 3000
+    },
+    {
+      "id": "234f6ed0-454c-5451-9051-0fac1a0426c4",
+      "name": "Classify ok?",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "688c7c81-99a0-5938-a5e5-4e2ee2bbc95a",
+              "leftValue": "={{ $json.ok }}",
+              "operator": {
+                "operation": "true",
+                "singleValue": true,
+                "type": "boolean"
+              },
+              "rightValue": ""
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        1240,
+        300
+      ],
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2
+    },
+    {
+      "credentials": {
+        "httpHeaderAuth": {
+          "name": "DOCAI Extractor"
+        }
+      },
+      "id": "556e7f33-9c0f-5931-b17e-0a6565a6b1ce",
+      "maxTries": 2,
+      "name": "Extract",
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "jsonBody": "={{ JSON.stringify({}) }}",
+        "method": "POST",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          },
+          "timeout": 180000
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "url": "={{ 'http://docai-extractor:8080/documents/' + $('Start').first().json.doc_id + '/extract' }}"
+      },
+      "position": [
+        1460,
+        300
+      ],
+      "retryOnFail": true,
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "waitBetweenTries": 3000
+    },
+    {
+      "id": "170804d9-b382-5369-9ef9-ac2b776ae823",
+      "name": "Extract ok?",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "6910a98c-08cf-5a95-9bc7-5074b640e3f2",
+              "leftValue": "={{ $json.ok }}",
+              "operator": {
+                "operation": "true",
+                "singleValue": true,
+                "type": "boolean"
+              },
+              "rightValue": ""
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        1860,
+        300
+      ],
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2
+    },
+    {
+      "credentials": {
+        "postgres": {
+          "name": "DOCAI Postgres"
+        }
+      },
+      "id": "e3c5c992-997c-5d25-ab9f-a5f9fcad7e32",
+      "name": "Finish",
+      "parameters": {
+        "operation": "executeQuery",
+        "options": {
+          "queryReplacement": "={{ [$('Start').first().json.doc_id, $execution.id] }}"
+        },
+        "query": "WITH u AS (\n  UPDATE documents SET status = decision, processed_at = now(), locked_at = NULL, last_error = NULL, updated_at = now()\n   WHERE id = $1 RETURNING id, status, doc_type, decision, validation->'reasons' AS reasons, cost_rub, tokens_in + tokens_out AS tokens\n)\nINSERT INTO audit_log (doc_id, actor, action, detail)\nSELECT id, 'system', 'processed', jsonb_build_object('decision', decision, 'doc_type', doc_type, 'reasons', reasons,\n       'tokens', tokens, 'cost_rub', cost_rub, 'execution_id', $2::text) FROM u\nRETURNING doc_id, detail"
+      },
+      "position": [
+        2700,
+        200
+      ],
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6
+    },
+    {
+      "id": "acace77b-b676-574a-8767-6b2af72d4c5e",
+      "name": "Judge classify",
+      "parameters": {
+        "jsCode": "// 200 -> next step. 409 (LLM budget spent) / 422 (bad input: no text, unknown type) -> a human looks at it.\n// 503 (provider rate limit / outage) and anything else -> throw: the document is retried with backoff.\nconst r = $json, step = 'classify';\nconst body = r.body ?? {};\nif (r.statusCode === 200) return [{ json: { ok: true, step, result: body } }];\nif (r.statusCode === 409 || r.statusCode === 422)\n  return [{ json: { ok: false, step, review: true, reason: `${step}: ${body.error ?? 'HTTP ' + r.statusCode}` } }];\nthrow new Error(`extractor ${step}: HTTP ${r.statusCode} ${String(body.error ?? JSON.stringify(body)).slice(0, 300)}`);\n"
+      },
+      "position": [
+        1040,
+        300
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
+    },
+    {
+      "id": "ff6c917d-cc9e-5cc3-8b03-f219adc76da0",
+      "name": "Judge extract",
+      "parameters": {
+        "jsCode": "// 200 -> next step. 409 (LLM budget spent) / 422 (bad input: no text, unknown type) -> a human looks at it.\n// 503 (provider rate limit / outage) and anything else -> throw: the document is retried with backoff.\nconst r = $json, step = 'extract';\nconst body = r.body ?? {};\nif (r.statusCode === 200) return [{ json: { ok: true, step, result: body } }];\nif (r.statusCode === 409 || r.statusCode === 422)\n  return [{ json: { ok: false, step, review: true, reason: `${step}: ${body.error ?? 'HTTP ' + r.statusCode}` } }];\nthrow new Error(`extractor ${step}: HTTP ${r.statusCode} ${String(body.error ?? JSON.stringify(body)).slice(0, 300)}`);\n"
+      },
+      "position": [
+        1660,
+        300
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
+    },
+    {
+      "id": "7369717e-d834-57aa-bf89-322f8c80da70",
+      "name": "Judge text",
+      "parameters": {
+        "jsCode": "// 200 -> next step. 409 (LLM budget spent) / 422 (bad input: no text, unknown type) -> a human looks at it.\n// 503 (provider rate limit / outage) and anything else -> throw: the document is retried with backoff.\nconst r = $json, step = 'text';\nconst body = r.body ?? {};\nif (r.statusCode === 200) return [{ json: { ok: true, step, result: body } }];\nif (r.statusCode === 409 || r.statusCode === 422)\n  return [{ json: { ok: false, step, review: true, reason: `${step}: ${body.error ?? 'HTTP ' + r.statusCode}` } }];\nthrow new Error(`extractor ${step}: HTTP ${r.statusCode} ${String(body.error ?? JSON.stringify(body)).slice(0, 300)}`);\n"
+      },
+      "position": [
+        420,
+        300
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
+    },
+    {
+      "id": "e1159c74-523d-526f-8ead-be7e01832203",
+      "name": "Judge validate",
+      "parameters": {
+        "jsCode": "// 200 -> next step. 409 (LLM budget spent) / 422 (bad input: no text, unknown type) -> a human looks at it.\n// 503 (provider rate limit / outage) and anything else -> throw: the document is retried with backoff.\nconst r = $json, step = 'validate';\nconst body = r.body ?? {};\nif (r.statusCode === 200) return [{ json: { ok: true, step, result: body } }];\nif (r.statusCode === 409 || r.statusCode === 422)\n  return [{ json: { ok: false, step, review: true, reason: `${step}: ${body.error ?? 'HTTP ' + r.statusCode}` } }];\nthrow new Error(`extractor ${step}: HTTP ${r.statusCode} ${String(body.error ?? JSON.stringify(body)).slice(0, 300)}`);\n"
+      },
+      "position": [
+        2280,
+        300
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
+    },
+    {
+      "credentials": {
+        "postgres": {
+          "name": "DOCAI Postgres"
+        }
+      },
+      "id": "a7a2d853-de6e-55a8-8e5c-696362fa0e63",
+      "name": "Needs review",
+      "parameters": {
+        "operation": "executeQuery",
+        "options": {
+          "queryReplacement": "={{ [$('Start').first().json.doc_id, $json.reason, $execution.id] }}"
+        },
+        "query": "WITH u AS (\n  UPDATE documents SET status = 'review', decision = 'review', processed_at = now(), locked_at = NULL, last_error = $2, updated_at = now()\n   WHERE id = $1 RETURNING id\n)\nINSERT INTO audit_log (doc_id, actor, action, detail)\nSELECT id, 'system', 'review_required', jsonb_build_object('reason', $2::text, 'execution_id', $3::text) FROM u\nRETURNING doc_id"
+      },
+      "position": [
+        2700,
+        420
+      ],
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6
+    },
+    {
+      "id": "dbf999a7-1a64-5420-a4f5-30e77c333eb3",
+      "name": "Start",
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "position": [
+        0,
+        300
+      ],
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1
+    },
+    {
+      "credentials": {
+        "httpHeaderAuth": {
+          "name": "DOCAI Extractor"
+        }
+      },
+      "id": "7453a9f4-6470-54ec-9460-60e1e7826536",
+      "maxTries": 2,
+      "name": "Text",
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "method": "POST",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          },
+          "timeout": 180000
+        },
+        "url": "={{ 'http://docai-extractor:8080/documents/' + $('Start').first().json.doc_id + '/text' }}"
+      },
+      "position": [
+        220,
+        300
+      ],
+      "retryOnFail": true,
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "waitBetweenTries": 3000
+    },
+    {
+      "id": "2ace5ef0-b00f-59cd-911e-7aab666280fe",
+      "name": "Text ok?",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "812e427d-f22c-5d41-9ff2-6a4302f706fa",
+              "leftValue": "={{ $json.ok }}",
+              "operator": {
+                "operation": "true",
+                "singleValue": true,
+                "type": "boolean"
+              },
+              "rightValue": ""
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        620,
+        300
+      ],
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2
+    },
+    {
+      "credentials": {
+        "httpHeaderAuth": {
+          "name": "DOCAI Extractor"
+        }
+      },
+      "id": "81b5c33f-814b-50fb-9ea7-dfa378752654",
+      "maxTries": 2,
+      "name": "Validate",
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "jsonBody": "={{ JSON.stringify({}) }}",
+        "method": "POST",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          },
+          "timeout": 60000
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "url": "={{ 'http://docai-extractor:8080/documents/' + $('Start').first().json.doc_id + '/validate' }}"
+      },
+      "position": [
+        2080,
+        300
+      ],
+      "retryOnFail": true,
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "waitBetweenTries": 3000
+    },
+    {
+      "id": "180fa583-e086-5270-8037-a9dfd07cf484",
+      "name": "Validate ok?",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "800c20fb-17f7-5ce5-ba40-d3463c74a1a5",
+              "leftValue": "={{ $json.ok }}",
+              "operator": {
+                "operation": "true",
+                "singleValue": true,
+                "type": "boolean"
+              },
+              "rightValue": ""
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        2480,
+        300
+      ],
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2
+    }
+  ],
+  "settings": {
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "@name:[DOCAI] 99 error handler",
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all"
+  }
+}
