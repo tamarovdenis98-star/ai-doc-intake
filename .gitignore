@@ -1,0 +1,15 @@
+# secrets
+.env
+.env.*
+!.env.example
+*.secrets*
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+# generated eval artifacts (the dataset generator is deterministic)
+eval/dataset/files/
+eval/runs/
+/tmp/
+*.log

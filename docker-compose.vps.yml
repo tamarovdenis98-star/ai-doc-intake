@@ -1,0 +1,18 @@
+# Shared VPS override: joins the external `proxy` network so n8n reaches the services by name
+# (docai-postgres, docai-extractor). Nothing in /opt/n8n or the reverse proxy changes.
+services:
+  postgres:
+    container_name: docai-postgres
+    mem_limit: 192m
+    networks: [default, proxy]
+  minio:
+    container_name: docai-minio
+    mem_limit: 256m
+  extractor:
+    container_name: docai-extractor
+    mem_limit: 448m
+    networks: [default, proxy]
+
+networks:
+  proxy:
+    external: true
